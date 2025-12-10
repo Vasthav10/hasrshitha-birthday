@@ -1,0 +1,330 @@
+:root {
+    --primary-color: #ff8fa3;
+    /* Soft Pink */
+    --secondary-color: #c77dff;
+    /* Soft Purple */
+    --accent-color: #ffd700;
+    /* Gold */
+    --dark-text: #2d3436;
+    --light-text: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #fff0f5 0%, #e6e6fa 100%);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--dark-text);
+    background: var(--bg-gradient);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Confetti Canvas */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.2), transparent);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+    font-size: 5rem;
+    background: -webkit-linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #636e72;
+    margin-bottom: 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 143, 163, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(199, 125, 255, 0.5);
+}
+
+/* Animations */
+.animate-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Common */
+.section {
+    padding: 5rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--dark-text);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #888;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+}
+
+/* Wishes Grid */
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wish-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+    transform: translateY(-10px);
+}
+
+.wish-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.wish-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+}
+
+/* Gallery Grid - Funny / Scattered Style */
+.alt-bg {
+    background: #fffdf5;
+    /* Off-white for retro feel */
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.gallery-item {
+    width: 280px;
+    background: white;
+    padding: 15px 15px 40px 15px;
+    /* Polaroid bottom padding */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+}
+
+/* Random Rotations for "Messy" Look */
+.gallery-item:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.gallery-item:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.gallery-item:nth-child(3n) {
+    transform: rotate(5deg);
+}
+
+.gallery-item:nth-child(4n) {
+    transform: rotate(-4deg);
+}
+
+/* Wobble Effect on Hover */
+.gallery-item:hover {
+    z-index: 10;
+    transform: scale(1.1) rotate(0deg);
+    animation: wobble 0.5s ease-in-out infinite alternate;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes wobble {
+    0% {
+        transform: scale(1.1) rotate(-2deg);
+    }
+
+    100% {
+        transform: scale(1.1) rotate(2deg);
+    }
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 300px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    display: block;
+    border: 1px solid #eee;
+}
+
+.gallery-item figure {
+    margin: 0;
+}
+
+.gallery-item figcaption {
+    font-family: 'Permanent Marker', cursive, sans-serif;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: bold;
+    transform: rotate(-1deg);
+}
+
+/* Message Section */
+.message-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 2px solid var(--primary-color);
+}
+
+.message-content p {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    /* Large and impactful */
+    color: var(--dark-text);
+    line-height: 1.4;
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+.message-content i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.6;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, #ff8fa3, #c77dff);
+    color: white;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+}

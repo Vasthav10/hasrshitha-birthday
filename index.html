@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Harshitha!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="animate-up">Happy Birthday</h1>
+            <h2 class="animate-up delay-1">Harshitha</h2>
+            <p class="animate-up delay-2">Wishing you a day filled with love, laughter, and magical moments.</p>
+            <a href="#wishes" class="btn animate-up delay-3">Make a Wish</a>
+        </div>
+        <div class="hero-decoration"></div>
+    </header>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="section">
+        <div class="container">
+            <h2 class="section-title">Heartfelt Wishes</h2>
+            <div class="wishes-grid">
+                <div class="wish-card">
+                    <i class="fas fa-star"></i>
+                    <p>"May your year be as bright and beautiful as your smile. Happy Birthday!"</p>
+                </div>
+                <div class="wish-card">
+                    <i class="fas fa-heart"></i>
+                    <p>"May you become more fat each year ."</p>
+                </div>
+                <div class="wish-card">
+                    <i class="fas fa-gem"></i>
+                    <p>"You deserve all the happiness in the world today and always."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Lane / Grid Section -->
+    <section id="gallery" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title"> A glimpse into our favorite moments</h2>
+            <div class="gallery-grid">
+                <!-- Placeholders: User to replace src with actual images -->
+                <div class="gallery-item">
+                    <figure>
+                        <img src="data/wh1.jpg" alt="Harshitha Memory 1">
+                        <figcaption>Caught in 4K 📸</figcaption>
+                    </figure>
+                </div>
+                <div class="gallery-item">
+                    <figure>
+                        <video loop muted autoplay playsinline>
+                            <source src="data/wh6.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>Mood 24/7 😴</figcaption>
+                    </figure>
+                </div>
+                <div class="gallery-item">
+                    <figure>
+                        <img src="data/wh3.jpg" alt="Harshitha Memory 3">
+                        <figcaption>Queen of the World 👑</figcaption>
+                    </figure>
+                </div>
+                <div class="gallery-item">
+                    <figure>
+                        <img src="data/wh4.jpg" alt="Harshitha Memory 4">
+                        <figcaption>No Autographs Pls 😎</figcaption>
+                    </figure>
+                </div>
+                <!-- Reusing images for grid fullness -->
+                <div class="gallery-item">
+                    <figure>
+                        <img src="data/wh5.jpg" alt="Harshitha Memory 5">
+                        <figcaption>Why are we like this? 🤪</figcaption>
+                    </figure>
+                </div>
+                <div class="gallery-item">
+                    <figure>
+                        <img src="data/wh2.jpg" alt="Harshitha Memory 6">
+                        <figcaption>Certified Legend 🌟</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message" class="section">
+        <div class="container">
+            <div class="message-content">
+                <i class="fas fa-quote-left"></i>
+                <p>"I am really thankful for being my friend, and I am happy to have you."</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ for Harshitha</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
